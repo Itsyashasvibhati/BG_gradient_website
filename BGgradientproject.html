@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #b55971, #19a5f3);
+    transition: background-color 1s ease-in-out;
+}
+
+section {
+    text-align: center;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.copyCode {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+    word-break: break-word;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.copyCode:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 25px;
+    color: #fff;
+    margin: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+
+#mybtn1 {
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+    box-shadow: 0px 5px 10px rgba(255, 92, 128, 0.5);
+}
+
+#mybtn1:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(255, 92, 128, 0.7);
+}
+
+#mybtn2 {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    box-shadow: 0px 5px 10px rgba(0, 242, 254, 0.5);
+}
+
+#mybtn2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(0, 242, 254, 0.7);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+</head>
+<body>
+    <section>
+        <div>
+            <button id="mybtn1"></button>
+            <button id="mybtn2"></button>
+        </div>
+
+        <h2>Copy code from Here</h2>
+        <div class="copyCode">background-image: linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198))</div>
+    </section>
+
+    <script>
+       let btn1 = document.getElementById("mybtn1");
+       let btn2 = document.getElementById("mybtn2");
+       let copyDiv = document.querySelector(".copyCode");
+       let rgb1 = "#000";
+       let rgb2 = "#fff";
+
+       const hexValues = () => {
+        let myHexValues = "0123456789abcdef";
+        let colors = "#";
+        for (let i = 0; i < 6; i++) {
+            // console.log(myHexValues[Math.floor(Math.random() * 16)]);
+            colors = colors + myHexValues[Math.floor(Math.random() * 16)];
+        }
+            return colors;
+        };
+       
+
+
+       const handleButton1 = ()  => {
+        rgb1 = hexValues();    //Calling Function
+         console.log(rgb1);
+         mybtn1.innerText = rgb1;
+         document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+         copyDiv.innerHTML = 
+         `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+       };
+
+
+       
+
+       
+       const handleButton2 = ()  => {
+        rgb2 = hexValues();    //Calling Function
+         console.log(rgb2);
+         mybtn2.innerText = rgb2;
+        document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+         copyDiv.innerHTML = 
+         `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+       };
+       
+
+         // Logic:-
+        // let myHexValues = "0123456789abcdef";
+        // let colors = "#";
+        // for (let i = 0; i < 6; i++) {
+        //     // console.log(myHexValues[Math.floor(Math.random() * 16)]);
+        //     colors = colors + myHexValues[Math.floor(Math.random() * 16)];
+        // }
+        //     console.log(colors);
+        // };
+       
+
+
+
+     mybtn1.addEventListener("click", handleButton1);
+     mybtn2.addEventListener("click", handleButton2);
+
+
+     copyDiv.addEventListener("clock", () => {
+        navigator.clipboard.writeText(copyDiv.innerText);
+     });
+
+
+
+    </script>
+</body>
+</html>
