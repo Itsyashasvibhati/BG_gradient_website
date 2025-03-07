@@ -13,3 +13,6 @@ A beautifully crafted project showcasing stunning gradient designs to enhance UI
 🌐 Responsive Design – Works seamlessly on all devices.
 🎭 Customizable Colors – Easily tweak colors to match your style.
 ⚡ Lightweight & Fast – Optimized for performance.
+
+
+![image alt](https://github.com/Itsyashasvibhati/BG_gradient_website/blob/dd3f162e659e776cda30a6715e9f6e825dd75507/Screenshot2Bg.png)
