@@ -9,9 +9,13 @@ A beautifully crafted project showcasing stunning gradient designs to enhance UI
 
 
 ✨ Features:
+
 🎨 Attractive Gradients – A collection of smooth and eye-catching gradients.
+
 🌐 Responsive Design – Works seamlessly on all devices.
+
 🎭 Customizable Colors – Easily tweak colors to match your style.
+
 ⚡ Lightweight & Fast – Optimized for performance.
 
 
